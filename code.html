@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background:#fdf7ff;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'on-tertiary': '#ffffff', 'on-surface-variant': '#494551', 'surface-bright': '#fdf7ff', 'on-primary': '#ffffff', 'on-error-container': '#93000a', 'secondary-fixed': '#e9ddff', 'tertiary': '#765b00', 'inverse-on-surface': '#f5eff7', 'secondary-fixed-dim': '#cdc0e9', 'on-primary-fixed': '#22005d', 'background': '#fdf7ff', 'surface': '#fdf7ff', 'inverse-surface': '#322f35', 'on-error': '#ffffff', 'secondary-container': '#e1d4fd', 'tertiary-fixed': '#ffdf93', 'outline-variant': '#cbc4d2', 'primary': '#4f378a', 'primary-fixed': '#e9ddff', 'inverse-primary': '#cfbcff', 'on-secondary': '#ffffff', 'surface-container-highest': '#e6e0e9', 'surface-dim': '#ded8e0', 'surface-variant': '#e6e0e9', 'on-tertiary-fixed': '#241a00', 'surface-container-high': '#ece6ee', 'surface-container-lowest': '#ffffff', 'error-container': '#ffdad6', 'on-surface': '#1d1b20', 'secondary': '#63597c', 'error': '#ba1a1a', 'on-secondary-fixed': '#1f1635', 'tertiary-container': '#c9a74d', 'tertiary-fixed-dim': '#e7c365', 'surface-container-low': '#f8f2fa', 'on-tertiary-container': '#503d00', 'outline': '#7a7582', 'on-secondary-fixed-variant': '#4b4263', 'on-primary-container': '#e0d2ff', 'primary-fixed-dim': '#cfbcff', 'on-tertiary-fixed-variant': '#594400', 'surface-tint': '#6750a4', 'on-background': '#1d1b20', 'primary-container': '#6750a4', 'surface-container': '#f2ecf4', 'on-primary-fixed-variant': '#4f378a', 'on-secondary-container': '#645a7d' }, borderRadius: { DEFAULT: '0.125rem', lg: '0.25rem', xl: '0.5rem', full: '0.75rem' }, spacing: {}, fontFamily: { headline: ['Public Sans'], display: ['Public Sans'], body: ['Public Sans'], label: ['Public Sans'] }, fontSize: {} } } };</script></head><body class="bg-surface text-on-surface font-body min-h-screen flex flex-col relative"><header class="fixed top-0 w-full z-40 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-24 px-4 flex flex-col justify-center gap-1"><div class="flex items-center justify-between gap-2"><div class="flex items-center gap-2"><button class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" onclick="document.getElementById('demo-drawer').classList.remove('translate-x-full');document.getElementById('drawer-backdrop').classList.remove('hidden');" type="button"><span class="material-symbols-outlined text-[22px]">menu</span></button><img alt="CampusFix AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrCvCMaTJPwW8R2wwmQd6fjju8TsfMJ1W0Lf9oW2qweIy8vIYpwW2JFXW_Ag8yhv0G_OjyKVWFHQ2wIrzdLIl2hAcyj_mWJDaw08gA7xGnq3DaT511yL7dxBXSPq_INGDYiueKlqAMQNTHnTyFveuBzWljvGgeo1pTqUmILIynf3GDvR0hB3mD8NKGNTZ90IVPy4_U3ZnvkfX0pAEmM8m-AJuZWhdlFiV7i1ZFz1--H-"/><div class="flex flex-col"><span class="font-headline font-bold text-sm tracking-tight text-primary leading-tight">CampusFix AI</span><span class="text-[11px] text-on-surface-variant font-medium">Tickets</span></div></div><div class="flex items-center gap-2"><button class="px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-semibold flex items-center gap-1" onclick="document.getElementById('demo-drawer').classList.remove('translate-x-full');document.getElementById('drawer-backdrop').classList.remove('hidden');" type="button"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span>Reporter</span><span class="material-symbols-outlined text-[14px]">expand_more</span></button><button class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-4 h-4 bg-error text-on-error text-[10px] font-bold rounded-full flex items-center justify-center leading-none">3</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6bXH9a7Dge76-1xdbfBW5CDIn14yPMQjq9A5w0kVKUlRVL2atEKiLFyRSvy-kLp67n4YHeoZOs1OnjuswmuVV_mmY6xH8X6Nc97NNFlaMjWtI_AWn3DNB8ogfkrQN8LFbPAxSo3EAp_0mQYTQGVpnzHMMnYNz0BTCLmkg5Gd2g1Ai4nLmTC85Uk7vqF3R2QheqXnEqyarvD9bza9KAyHzUPgVEMn_qInTY43qI88"/></div></div><div class="flex items-center justify-between bg-primary-fixed/50 px-2.5 py-0.5 rounded"><span class="text-[10px] font-semibold text-on-primary-fixed truncate">Rathinam Technical Campus - IT HAPPENS @ RAALE #15</span><span class="text-[9px] uppercase tracking-wider font-bold bg-primary text-on-primary px-1.5 py-0.2 rounded-full">LIVE LABS</span></div></div></header><main class="flex-1 flex flex-col relative w-full pt-24 pb-20 bg-surface"><div class="flex flex-col w-full px-4 py-3 space-y-4">
+<!-- Interactive Workflow Progression Stepper -->
+<section class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px]">timeline</span>
+<span class="font-headline font-bold text-xs uppercase tracking-wider text-on-surface">CampusFix Autonomous Pipeline</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+        AI Orchestration
+      </span>
+</div>
+<!-- Stepper Track -->
+<div class="grid grid-cols-4 gap-1 relative pt-1">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center group cursor-pointer" onclick="filterByStatus('Open')">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-[16px]">inbox</span>
+</div>
+<span class="text-[11px] font-bold text-primary mt-1.5 leading-tight">OPEN</span>
+<span class="text-[9px] text-on-surface-variant font-medium">3 active</span>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center group cursor-pointer" onclick="filterByStatus('Assigned')">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs">
+<span class="material-symbols-outlined text-[16px]">person_check</span>
+</div>
+<span class="text-[11px] font-bold text-on-surface mt-1.5 leading-tight">ASSIGNED</span>
+<span class="text-[9px] text-on-surface-variant font-medium">1 SLA track</span>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center group cursor-pointer" onclick="filterByStatus('In Progress')">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-xs">
+<span class="material-symbols-outlined text-[16px]">engineering</span>
+</div>
+<span class="text-[11px] font-bold text-on-surface mt-1.5 leading-tight">IN PROGRESS</span>
+<span class="text-[9px] text-on-surface-variant font-medium">1 working</span>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center group cursor-pointer" onclick="filterByStatus('Resolved')">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-outline flex items-center justify-center font-bold text-xs">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+</div>
+<span class="text-[11px] font-bold text-on-surface-variant mt-1.5 leading-tight">RESOLVED</span>
+<span class="text-[9px] text-on-surface-variant font-medium">1 verified</span>
+</div>
+</div>
+</section>
+<!-- Search & Filter Controls -->
+<section class="flex flex-col space-y-2.5">
+<!-- Search Bar with Micro Action -->
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-20 bg-surface-container-lowest text-on-surface rounded-xl text-xs placeholder:text-outline focus:outline-none focus:bg-surface-container-low shadow-sm" id="ticket-search-input" oninput="handleSearch(this.value)" placeholder="Search TKT-ID, location, or issue..." type="text"/>
+<button class="absolute right-2.5 px-2 py-1 text-[11px] font-medium text-on-surface-variant bg-surface-container hover:bg-surface-container-high rounded hidden" id="search-clear-btn" onclick="clearSearch()" type="button">Clear</button>
+</div>
+<!-- Quick Filter Chips: Status -->
+<div class="flex items-center space-x-1.5 overflow-x-auto pb-0.5 no-scrollbar">
+<button class="filter-chip status-chip active-chip px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-primary text-on-primary shadow-sm transition-all" onclick="setFilter('all', this)">
+        All (6)
+      </button>
+<button class="filter-chip status-chip px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" onclick="setFilter('Open', this)">
+        Open (3)
+      </button>
+<button class="filter-chip status-chip px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" onclick="setFilter('Assigned', this)">
+        Assigned (1)
+      </button>
+<button class="filter-chip status-chip px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" onclick="setFilter('In Progress', this)">
+        In Progress (1)
+      </button>
+<button class="filter-chip status-chip px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" onclick="setFilter('Resolved', this)">
+        Resolved (1)
+      </button>
+</div>
+<!-- Department Selector Pills -->
+<div class="flex items-center space-x-1.5 overflow-x-auto pb-1 no-scrollbar">
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline px-1">Dept:</span>
+<button class="dept-chip active-dept px-2.5 py-1 rounded text-[11px] font-semibold bg-secondary text-on-secondary transition-all" onclick="setDeptFilter('all', this)">
+        All
+      </button>
+<button class="dept-chip px-2.5 py-1 rounded text-[11px] font-semibold bg-surface-container-high text-on-surface hover:bg-surface-variant transition-all" onclick="setDeptFilter('CSE', this)">
+        CSE
+      </button>
+<button class="dept-chip px-2.5 py-1 rounded text-[11px] font-semibold bg-surface-container-high text-on-surface hover:bg-surface-variant transition-all" onclick="setDeptFilter('ECE', this)">
+        ECE
+      </button>
+<button class="dept-chip px-2.5 py-1 rounded text-[11px] font-semibold bg-surface-container-high text-on-surface hover:bg-surface-variant transition-all" onclick="setDeptFilter('Library', this)">
+        Library
+      </button>
+<button class="dept-chip px-2.5 py-1 rounded text-[11px] font-semibold bg-surface-container-high text-on-surface hover:bg-surface-variant transition-all" onclick="setDeptFilter('Admin', this)">
+        Admin
+      </button>
+</div>
+</section>
+<!-- Live Status Bar -->
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant px-1">
+<span class="font-medium" id="ticket-count-label">Showing 6 registered issues</span>
+<span class="flex items-center gap-1 font-mono text-[10px] bg-surface-container px-2 py-0.5 rounded text-secondary">
+<span class="material-symbols-outlined text-[12px]">bolt</span> RAALE-15 LIVE SYNC
+    </span>
+</div>
+<!-- Ticket Cards Container -->
+<section class="flex flex-col space-y-3 pb-6" id="ticket-cards-list">
+<!-- Ticket 1: TKT-198 -->
+<article class="ticket-card bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col space-y-3 transition-transform hover:-translate-y-0.5" data-dept="CSE" data-keywords="projector facility cse ai lab high" data-status="Open" data-ticket-id="TKT-198">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-bold text-primary bg-primary-fixed/50 px-1.5 py-0.5 rounded">TKT-198</span>
+<span class="bg-error-container text-on-error-container text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">priority_high</span> High
+            </span>
+<span class="bg-surface-container text-on-surface-variant text-[10px] font-semibold px-2 py-0.5 rounded">Facility</span>
+</div>
+<h2 class="font-headline font-bold text-sm text-on-surface mt-1.5 truncate">Projector Not Working</h2>
+</div>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Open</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-on-surface-variant">
+<div class="flex items-center gap-1 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+<span class="truncate font-medium">CSE AI Lab</span>
+</div>
+<span class="text-outline">•</span>
+<div class="flex items-center gap-1 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>Logged 18m ago</span>
+</div>
+</div>
+<!-- Action Footer with CTA -->
+<div class="pt-2 flex items-center justify-between bg-surface-container-low p-2.5 rounded-xl">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[14px]">smart_toy</span>
+</div>
+<span class="text-[11px] text-on-surface-variant font-medium">Suggested: Tech Vignesh (AV)</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary text-xs font-bold shadow-sm shadow-primary/20 hover:bg-opacity-90 active:scale-95 transition-all flex items-center gap-1" onclick="openAssignModal('TKT-198')" type="button">
+<span class="material-symbols-outlined text-[14px]">person_add</span>
+<span>Assign Technician</span>
+</button>
+</div>
+</article>
+<!-- Ticket 2: TKT-199 -->
+<article class="ticket-card bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col space-y-3 transition-transform hover:-translate-y-0.5" data-dept="Library" data-keywords="wifi down library 2nd floor network critical arjun sla" data-status="Assigned" data-ticket-id="TKT-199">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-bold text-primary bg-primary-fixed/50 px-1.5 py-0.5 rounded">TKT-199</span>
+<span class="bg-error text-on-error text-[10px] font-black px-2 py-0.5 rounded-full flex items-center gap-0.5 animate-pulse">
+<span class="material-symbols-outlined text-[11px]">warning</span> Critical
+            </span>
+<span class="bg-surface-container text-on-surface-variant text-[10px] font-semibold px-2 py-0.5 rounded">Network</span>
+</div>
+<h2 class="font-headline font-bold text-sm text-on-surface mt-1.5 truncate">WiFi Down in Library</h2>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Assigned</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-on-surface-variant">
+<div class="flex items-center gap-1 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+<span class="truncate font-medium">Library 2nd Floor</span>
+</div>
+<span class="text-outline">•</span>
+<div class="flex items-center gap-1 text-error font-bold">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span>SLA: 1h 42m left</span>
+</div>
+</div>
+<!-- Technician & SLA Progress Bar -->
+<div class="bg-surface-container-low p-2.5 rounded-xl flex flex-col space-y-2">
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<img alt="Tech Arjun" class="w-6 h-6 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6bXH9a7Dge76-1xdbfBW5CDIn14yPMQjq9A5w0kVKUlRVL2atEKiLFyRSvy-kLp67n4YHeoZOs1OnjuswmuVV_mmY6xH8X6Nc97NNFlaMjWtI_AWn3DNB8ogfkrQN8LFbPAxSo3EAp_0mQYTQGVpnzHMMnYNz0BTCLmkg5Gd2g1Ai4nLmTC85Uk7vqF3R2QheqXnEqyarvD9bza9KAyHzUPgVEMn_qInTY43qI88"/>
+<span class="font-semibold text-on-surface text-[11px]">Assigned to <span class="text-primary font-bold">Arjun (NetOps)</span></span>
+</div>
+<span class="text-[10px] font-mono text-outline">Dispatch ACK</span>
+</div>
+<!-- Micro SLA bar -->
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+</article>
+<!-- Ticket 3: TKT-200 -->
+<article class="ticket-card bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col space-y-3 transition-transform hover:-translate-y-0.5" data-dept="CSE" data-keywords="python installing lab 3 software medium in progress technician notes pip" data-status="In Progress" data-ticket-id="TKT-200">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-bold text-primary bg-primary-fixed/50 px-1.5 py-0.5 rounded">TKT-200</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">speed</span> Medium
+            </span>
+<span class="bg-surface-container text-on-surface-variant text-[10px] font-semibold px-2 py-0.5 rounded">Software</span>
+</div>
+<h2 class="font-headline font-bold text-sm text-on-surface mt-1.5 truncate">Python Not Installing</h2>
+</div>
+<span class="bg-tertiary-fixed/60 text-on-tertiary-fixed-variant text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">In Progress</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-on-surface-variant">
+<div class="flex items-center gap-1 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+<span class="truncate font-medium">Lab 3 (Systems Lab)</span>
+</div>
+<span class="text-outline">•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">sync</span>
+<span>Updated 6m ago</span>
+</div>
+</div>
+<!-- Technician Notes Display -->
+<div class="bg-surface-container p-3 rounded-xl flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-[11px] font-bold text-primary">
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+<span>Technician Notes recorded:</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-mono">11:42 AM</span>
+</div>
+<p class="text-xs text-on-surface-variant font-normal leading-relaxed italic bg-surface-container-lowest/70 p-2 rounded">
+          "Proxy bypass applied for pip package index. Deploying Python 3.11 environment via silent MSI broadcast to seats 14 through 28."
+        </p>
+</div>
+</article>
+<!-- Ticket 4: TKT-201 -->
+<article class="ticket-card bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col space-y-3 transition-transform hover:-translate-y-0.5 opacity-90" data-dept="CSE" data-keywords="mouse not working pc-05 hardware low cse ai lab resolved resolution note" data-status="Resolved" data-ticket-id="TKT-201">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-bold text-primary bg-primary-fixed/50 px-1.5 py-0.5 rounded">TKT-201</span>
+<span class="bg-surface-container-high text-on-surface-variant text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">low_priority</span> Low
+            </span>
+<span class="bg-surface-container text-on-surface-variant text-[10px] font-semibold px-2 py-0.5 rounded">Hardware</span>
+</div>
+<h2 class="font-headline font-bold text-sm text-on-surface mt-1.5 truncate">Mouse Not Working PC-05</h2>
+</div>
+<span class="bg-surface-variant text-on-surface text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-primary">check_circle</span> Resolved
+        </span>
+</div>
+<div class="flex items-center gap-3 text-xs text-on-surface-variant">
+<div class="flex items-center gap-1 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+<span class="truncate font-medium">CSE AI Lab - PC-05</span>
+</div>
+<span class="text-outline">•</span>
+<div class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Verified by Staff</span>
+</div>
+</div>
+<!-- Resolution note -->
+<div class="bg-primary-fixed/30 p-2.5 rounded-xl flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">task_alt</span>
+<div class="flex flex-col text-xs">
+<span class="font-bold text-on-primary-fixed text-[11px]">Resolution Note:</span>
+<span class="text-on-surface-variant leading-snug">Faulty optical sensor cable replaced with spare unit # RTC-M-44. Input responsiveness tested on Ubuntu 22.04 LTS.</span>
+</div>
+</div>
+</article>
+<!-- Ticket 5: TKT-202 -->
+<article class="ticket-card bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col space-y-3 transition-transform hover:-translate-y-0.5" data-dept="Admin" data-keywords="ac not working facility high seminar hall open temperature cooling" data-status="Open" data-ticket-id="TKT-202">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-bold text-primary bg-primary-fixed/50 px-1.5 py-0.5 rounded">TKT-202</span>
+<span class="bg-error-container text-on-error-container text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">priority_high</span> High
+            </span>
+<span class="bg-surface-container text-on-surface-variant text-[10px] font-semibold px-2 py-0.5 rounded">Facility</span>
+</div>
+<h2 class="font-headline font-bold text-sm text-on-surface mt-1.5 truncate">AC Not Working</h2>
+</div>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Open</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-on-surface-variant">
+<div class="flex items-center gap-1 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+<span class="truncate font-medium">Seminar Hall</span>
+</div>
+<span class="text-outline">•</span>
+<div class="flex items-center gap-1 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-outline">ac_unit</span>
+<span>HVAC Chiller Unit 2</span>
+</div>
+</div>
+<!-- Action Footer with CTA -->
+<div class="pt-2 flex items-center justify-between bg-surface-container-low p-2.5 rounded-xl">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[14px]">hvac</span>
+</div>
+<span class="text-[11px] text-on-surface-variant font-medium">Assigned to: Unassigned</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary text-xs font-bold shadow-sm shadow-primary/20 hover:bg-opacity-90 active:scale-95 transition-all flex items-center gap-1" onclick="openAssignModal('TKT-202')" type="button">
+<span class="material-symbols-outlined text-[14px]">person_add</span>
+<span>Assign Technician</span>
+</button>
+</div>
+</article>
+<!-- Ticket 6: TKT-203 -->
+<article class="ticket-card bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col space-y-3 transition-transform hover:-translate-y-0.5" data-dept="CSE" data-keywords="lab pc not starting hardware high cse ai lab pc-12 duplicate candidate" data-status="Open" data-ticket-id="TKT-203">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-bold text-primary bg-primary-fixed/50 px-1.5 py-0.5 rounded">TKT-203</span>
+<span class="bg-error-container text-on-error-container text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">priority_high</span> High
+            </span>
+<span class="bg-surface-container text-on-surface-variant text-[10px] font-semibold px-2 py-0.5 rounded">Hardware</span>
+</div>
+<h2 class="font-headline font-bold text-sm text-on-surface mt-1.5 truncate">Lab PC Not Starting</h2>
+</div>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Open</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-on-surface-variant">
+<div class="flex items-center gap-1 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+<span class="truncate font-medium">CSE AI Lab - PC-12</span>
+</div>
+<span class="text-outline">•</span>
+<div class="flex items-center gap-1 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-outline">memory</span>
+<span>No POST / Power LED amber</span>
+</div>
+</div>
+<!-- AI Duplicate Flag Alert -->
+<div class="bg-tertiary-fixed/40 p-2.5 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">difference</span>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-on-tertiary-fixed leading-tight">Duplicate Candidate Flag</span>
+<span class="text-[10px] text-on-surface-variant">92% similarity with resolved incident #RTC-2024-88</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-tertiary text-on-tertiary text-[11px] font-bold hover:bg-opacity-90 transition-all shrink-0" onclick="viewDuplicate('TKT-203')" type="button">
+          Review
+        </button>
+</div>
+<!-- Action Footer with CTA -->
+<div class="flex items-center justify-between pt-1">
+<span class="text-[11px] text-outline font-medium">Awaiting Dispatch Review</span>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary text-xs font-bold shadow-sm shadow-primary/20 hover:bg-opacity-90 active:scale-95 transition-all flex items-center gap-1" onclick="openAssignModal('TKT-203')" type="button">
+<span class="material-symbols-outlined text-[14px]">person_add</span>
+<span>Assign Technician</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Empty State (Hidden by default) -->
+<div class="hidden flex flex-col items-center justify-center p-8 bg-surface-container-lowest rounded-xl text-center space-y-3" id="no-tickets-found">
+<div class="w-14 h-14 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">search_off</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline font-bold text-sm text-on-surface">No tickets match criteria</h3>
+<p class="text-xs text-on-surface-variant mt-1">Try resetting the department filter or search terms</p>
+</div>
+<button class="px-4 py-2 rounded-xl bg-primary text-on-primary text-xs font-bold shadow-sm" onclick="resetFilters()">
+      Reset Filters
+    </button>
+</div>
+<!-- Interactive Assign Technician Bottom Modal -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden transition-opacity" id="assign-modal-backdrop" onclick="closeAssignModal()"></div>
+<div class="fixed bottom-0 left-0 right-0 max-w-lg mx-auto bg-surface-container-lowest rounded-t-2xl z-50 p-5 shadow-2xl transform translate-y-full transition-transform duration-300 ease-out flex flex-col space-y-4" id="assign-modal">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-outline uppercase tracking-wider">Manual Tech Allocation</span>
+<h3 class="font-headline font-bold text-base text-on-surface" id="modal-ticket-title">Assign Technician to TKT-198</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface" onclick="closeAssignModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Technician Recommendations List -->
+<div class="flex flex-col space-y-2">
+<span class="text-xs font-bold text-on-surface-variant">Recommended on-duty technicians:</span>
+<div class="p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer flex items-center justify-between transition-colors" onclick="confirmAssignment('Arjun K. (Hardware)')">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xs">AK</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-on-surface">Arjun K.</span>
+<span class="text-[11px] text-on-surface-variant">Hardware Specialist • 1 Active Ticket</span>
+</div>
+</div>
+<span class="bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded">Assign</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer flex items-center justify-between transition-colors" onclick="confirmAssignment('Suresh R. (AV &amp; Facility)')">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-secondary flex items-center justify-center font-bold text-xs">SR</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-on-surface">Suresh R.</span>
+<span class="text-[11px] text-on-surface-variant">AV &amp; Electrical • 0 Active Tickets</span>
+</div>
+</div>
+<span class="bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded">Assign</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer flex items-center justify-between transition-colors" onclick="confirmAssignment('Deepa M. (SysAdmin)')">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center font-bold text-xs">DM</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-on-surface">Deepa M.</span>
+<span class="text-[11px] text-on-surface-variant">System Admin • 2 Active Tickets</span>
+</div>
+</div>
+<span class="bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded">Assign</span>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-2.5 rounded-xl bg-surface-container text-on-surface font-semibold text-xs" onclick="closeAssignModal()">
+        Cancel
+      </button>
+</div>
+</div>
+<!-- Duplicate Inspection Dialog Toast -->
+<div class="fixed top-28 left-4 right-4 bg-inverse-surface text-inverse-on-surface p-3.5 rounded-xl shadow-xl flex items-center justify-between z-50 hidden transition-all" id="duplicate-toast">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">content_copy</span>
+<div class="flex flex-col text-xs">
+<span class="font-bold">Duplicate Analysis for TKT-203</span>
+<span class="text-[11px] text-outline-variant">Identical to RTC-2024-88 resolved last Tuesday.</span>
+</div>
+</div>
+<button class="text-xs bg-primary text-on-primary font-bold px-2.5 py-1 rounded ml-2 shrink-0" onclick="document.getElementById('duplicate-toast').classList.add('hidden')">
+      Merge
+    </button>
+</div>
+</div>
+<script>
+  let activeStatus = 'all';
+  let activeDept = 'all';
+  let searchQuery = '';
+
+  function handleSearch(query) {
+    searchQuery = query.toLowerCase().trim();
+    const clearBtn = document.getElementById('search-clear-btn');
+    if (searchQuery.length > 0) {
+      clearBtn.classList.remove('hidden');
+    } else {
+      clearBtn.classList.add('hidden');
+    }
+    applyFilters();
+  }
+
+  function clearSearch() {
+    const input = document.getElementById('ticket-search-input');
+    input.value = '';
+    searchQuery = '';
+    document.getElementById('search-clear-btn').classList.add('hidden');
+    applyFilters();
+  }
+
+  function setFilter(status, buttonEl) {
+    activeStatus = status;
+    document.querySelectorAll('.status-chip').forEach(btn => {
+      btn.classList.remove('bg-primary', 'text-on-primary', 'active-chip');
+      btn.classList.add('bg-surface-container-lowest', 'text-on-surface');
+    });
+    buttonEl.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+    buttonEl.classList.add('bg-primary', 'text-on-primary', 'active-chip');
+    applyFilters();
+  }
+
+  function filterByStatus(status) {
+    const chip = Array.from(document.querySelectorAll('.status-chip')).find(c => c.textContent.includes(status));
+    if (chip) {
+      setFilter(status, chip);
+    }
+  }
+
+  function setDeptFilter(dept, buttonEl) {
+    activeDept = dept;
+    document.querySelectorAll('.dept-chip').forEach(btn => {
+      btn.classList.remove('bg-secondary', 'text-on-secondary', 'active-dept');
+      btn.classList.add('bg-surface-container-high', 'text-on-surface');
+    });
+    buttonEl.classList.remove('bg-surface-container-high', 'text-on-surface');
+    buttonEl.classList.add('bg-secondary', 'text-on-secondary', 'active-dept');
+    applyFilters();
+  }
+
+  function resetFilters() {
+    const allStatusBtn = document.querySelector('.status-chip');
+    const allDeptBtn = document.querySelector('.dept-chip');
+    clearSearch();
+    if (allStatusBtn) setFilter('all', allStatusBtn);
+    if (allDeptBtn) setDeptFilter('all', allDeptBtn);
+  }
+
+  function applyFilters() {
+    const cards = document.querySelectorAll('.ticket-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const id = card.getAttribute('data-ticket-id').toLowerCase();
+      const status = card.getAttribute('data-status');
+      const dept = card.getAttribute('data-dept');
+      const keywords = card.getAttribute('data-keywords').toLowerCase();
+
+      const matchesStatus = (activeStatus === 'all') || (status.toLowerCase() === activeStatus.toLowerCase());
+      const matchesDept = (activeDept === 'all') || (dept === activeDept);
+      const matchesSearch = (!searchQuery) || id.includes(searchQuery) || keywords.includes(searchQuery);
+
+      if (matchesStatus && matchesDept && matchesSearch) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const label = document.getElementById('ticket-count-label');
+    const emptyState = document.getElementById('no-tickets-found');
+
+    if (label) {
+      label.textContent = `Showing ${visibleCount} registered issue${visibleCount === 1 ? '' : 's'}`;
+    }
+
+    if (emptyState) {
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+      } else {
+        emptyState.classList.add('hidden');
+      }
+    }
+  }
+
+  let currentAssignTicketId = null;
+
+  function openAssignModal(ticketId) {
+    currentAssignTicketId = ticketId;
+    const title = document.getElementById('modal-ticket-title');
+    if (title) title.textContent = `Assign Technician to ${ticketId}`;
+    
+    const backdrop = document.getElementById('assign-modal-backdrop');
+    const modal = document.getElementById('assign-modal');
+    backdrop.classList.remove('hidden');
+    setTimeout(() => {
+      modal.classList.remove('translate-y-full');
+    }, 10);
+  }
+
+  function closeAssignModal() {
+    const backdrop = document.getElementById('assign-modal-backdrop');
+    const modal = document.getElementById('assign-modal');
+    modal.classList.add('translate-y-full');
+    setTimeout(() => {
+      backdrop.classList.add('hidden');
+    }, 300);
+  }
+
+  function confirmAssignment(techName) {
+    if (currentAssignTicketId) {
+      const card = document.querySelector(`[data-ticket-id="${currentAssignTicketId}"]`);
+      if (card) {
+        card.setAttribute('data-status', 'Assigned');
+        const statusBadge = card.querySelector('article > div > span:last-child');
+        if (statusBadge) {
+          statusBadge.textContent = 'Assigned';
+          statusBadge.className = 'bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider';
+        }
+      }
+    }
+    closeAssignModal();
+    applyFilters();
+  }
+
+  function viewDuplicate(ticketId) {
+    const toast = document.getElementById('duplicate-toast');
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 5000);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-40 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-2"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[11px] font-label font-medium">Dashboard</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 transition-colors text-primary font-bold" data-path="tickets" href="#"><span class="material-symbols-outlined text-[22px]">confirmation_number</span><span class="text-[11px] font-label font-medium">Tickets</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="create-issue" href="#"><div class="w-8 h-8 rounded-xl bg-primary text-on-primary flex items-center justify-center -mt-3 shadow-md shadow-primary/30"><span class="material-symbols-outlined text-[20px]">add</span></div><span class="text-[11px] font-label font-medium">Report</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="security-sla" href="#"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="text-[11px] font-label font-medium">Security &amp; SLA</span></a></div></nav><div class="fixed inset-0 bg-inverse-surface/40 z-50 hidden backdrop-blur-sm transition-opacity" id="drawer-backdrop" onclick="document.getElementById('demo-drawer').classList.add('translate-x-full');this.classList.add('hidden');"></div><aside class="fixed top-0 right-0 h-full w-[290px] max-w-[85vw] bg-surface-container-lowest z-50 shadow-2xl p-5 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out" id="demo-drawer"><div class="flex flex-col gap-4"><div class="flex items-center justify-between pb-2"><div class="flex flex-col"><span class="text-xs uppercase font-headline tracking-wider text-outline font-bold">Competition Demo</span><h3 class="text-base font-bold text-on-surface">Switch Role Mode</h3></div><button class="w-9 h-9 flex items-center justify-center rounded-full bg-surface-container text-on-surface" onclick="document.getElementById('demo-drawer').classList.add('translate-x-full');document.getElementById('drawer-backdrop').classList.add('hidden');" type="button"><span class="material-symbols-outlined text-[18px]">close</span></button></div><div class="flex flex-col gap-2.5"><div class="p-3 rounded-xl bg-primary-fixed/40 cursor-pointer flex flex-col gap-1"><div class="flex items-center justify-between"><span class="text-xs font-bold text-on-primary-fixed">Reporter (Student/Staff)</span><span class="material-symbols-outlined text-primary text-[18px]">check_circle</span></div><span class="text-[11px] text-on-surface-variant font-mono">reporter@rathinam.in</span></div><div class="p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer flex flex-col gap-1 transition-colors"><div class="flex items-center justify-between"><span class="text-xs font-bold text-on-surface">Lab Technician</span><span class="material-symbols-outlined text-outline text-[18px]">swap_horiz</span></div><span class="text-[11px] text-on-surface-variant font-mono">tech@rathinam.in</span></div><div class="p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer flex flex-col gap-1 transition-colors"><div class="flex items-center justify-between"><span class="text-xs font-bold text-on-surface">Campus Admin / Jury</span><span class="material-symbols-outlined text-outline text-[18px]">swap_horiz</span></div><span class="text-[11px] text-on-surface-variant font-mono">admin@rathinam.in</span></div></div></div><div class="pt-4 text-center"><span class="text-[10px] text-outline font-medium">IT HAPPENS @ RAALE #15 • RTC Tech Challenge</span></div></aside></body></html>
